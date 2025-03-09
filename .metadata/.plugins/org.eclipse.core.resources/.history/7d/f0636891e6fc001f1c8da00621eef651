@@ -15,8 +15,6 @@ public class AsynchronousEcho {
 		serverSocketChannel.configureBlocking(false);
 		serverSocketChannel.register(selector,SelectionKey.OP_ACCEPT); //The selector will notify of incoming connections. 
 		/*
-		 * server socket channel preparation code. It opens the server socket channel and makes 
-		 * it non-blocking, then registers an NIO key selector for pro-cessing events.
 		 * The main loop iterates over the selector keys that have events ready for
 		 * processing and dispatches them to specialized methods depending on the event type
 		 * (new connections, data has arrived, or data can be sent again).
@@ -38,5 +36,3 @@ public class AsynchronousEcho {
 		}
 	}
 }
-
-
