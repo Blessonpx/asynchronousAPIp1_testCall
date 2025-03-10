@@ -8,4 +8,11 @@ public  class Event {
 		this.key = key;
 		this.data = data;
 		}
+	public String getKey() {
+		return key;
+	}
+	
+	public Object getData() {
+		return data;
+	}
 }

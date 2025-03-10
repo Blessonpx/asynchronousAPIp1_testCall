@@ -3,7 +3,6 @@ package eventLoopTest1;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.function.Consumer;
-import eventLoopTest1.Event;
 
 
 public final class EventLoop {
@@ -23,10 +22,10 @@ public final class EventLoop {
 		while(!(events.isEmpty() && Thread.interrupted())) {
 			if(!events.isEmpty()) {
 				Event event = events.pop();
-				if(handlers.containsKey(event.key)) {
-					handlers.get(event.key).accept(event.data);
+				if(handlers.containsKey(event.getKey())) {
+					handlers.get(event.getKey()).accept(event.getData());
 				}else {
-					System.err.println("No Handler for Key"+event.key);
+					System.err.println("No Handler for Key"+event.getKey());
 				}
 			}
 		}
