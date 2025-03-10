@@ -30,6 +30,7 @@ public class SimpleEventLoop {
 		}
 				).start();
 		eventLoop.dispatch(new Event("hello","world")); // EVents Dispatched From Main thread
+		// Foo does not have a handler defined m hence will through error
 		eventLoop.dispatch(new Event("foo","bar"));
 		// Event handlers defined as Java lambda function
 		eventLoop.on("hello", s -> System.out.println("hello " + s))
